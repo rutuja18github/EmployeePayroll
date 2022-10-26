@@ -27,3 +27,11 @@ insert into employee_payroll_service
 select salary from employee_payroll_service where name='Bill';
  
 select * from employee_payroll_service where start_date between cast('2018-01-01' as date) and Date(now());
+
+alter table employee_payroll_service add gender varchar(10) after name;
+
+select * from employee_payroll_service ;
+ 
+update employee_payroll_service set gender='M' where name='Bill' or name='charlie';
+ 
+ 
