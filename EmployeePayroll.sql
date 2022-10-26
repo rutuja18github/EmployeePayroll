@@ -33,5 +33,11 @@ alter table employee_payroll_service add gender varchar(10) after name;
 select * from employee_payroll_service ;
  
 update employee_payroll_service set gender='M' where name='Bill' or name='charlie';
+
+update employee_payroll_service set gender='M' where name='Ashish';
+
+update employee_payroll_service set gender='F' where name='Shweta' or name='Sneha';
+
+select sum(salary) from employee_payroll_service where gender='F' group by gender;
  
- 
+select gender,sum(salary) as salary,min(salary) as minimum_salary,max(salary) as maximum_salary,avg(salary) as average_salary,count(salary) as no_of_employees from employee_payroll_service group by gender; 
